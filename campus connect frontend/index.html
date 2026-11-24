@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="CampusConnect – one portal for campus placements and internships.">
+<title>Home | CampusConnect</title>
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<div id="header"></div>
+<main id="main">
+<section class="hero"><div class="container hero-grid">
+ <div><h1>Your campus placement journey, in one place.</h1>
+ <p>Discover jobs and internships, apply in a click and track every application. No more missed notices or scattered spreadsheets.</p>
+ <div class="hero-actions"><a class="btn" href="jobs.html">Browse jobs</a><a class="btn btn-light" href="login.html">Create free account</a></div></div>
+ <aside class="hero-card" aria-label="Why CampusConnect"><h2>Why students love it</h2><ul><li>Verified recruiters only</li><li>One profile, many applications</li><li>Instant status updates</li><li>Works on phone and desktop</li></ul></aside>
+</div></section>
+<section class="stats"><div class="container grid grid-4">
+ <div class="stat"><strong id="statJobs">0</strong>Open positions</div><div class="stat"><strong>40+</strong>Partner companies</div><div class="stat"><strong>1,200+</strong>Students registered</div><div class="stat"><strong>85%</strong>Placement rate</div></div></section>
+<section class="section"><div class="container"><h2 class="title">How it works</h2><p class="sub">Three simple steps from sign-up to offer letter</p>
+ <div class="grid grid-3">
+ <article class="card"><div class="icon" aria-hidden="true">👤</div><h3>1. Build your profile</h3><p>Add your course, skills and resume once.</p></article>
+ <article class="card"><div class="icon" aria-hidden="true">🔎</div><h3>2. Find opportunities</h3><p>Search and filter by skill, location and job type.</p></article>
+ <article class="card"><div class="icon" aria-hidden="true">📈</div><h3>3. Apply and track</h3><p>Follow every application from Applied to Selected.</p></article></div></div></section>
+<section class="section" style="padding-top:0"><div class="container"><h2 class="title">Latest openings</h2><p class="sub">Fresh opportunities added this week</p>
+ <div class="grid grid-3" id="latest"></div><p style="text-align:center;margin-top:1.5rem"><a class="btn" href="jobs.html">See all jobs</a></p></div></section>
+<section class="cta"><div class="container"><h2>Ready to start your career?</h2><p>Join CampusConnect today and apply to your first job in minutes.</p><a class="btn" href="login.html">Get started</a></div></section>
+</main>
+<div id="footer"></div>
+<script src="js/data.js"></script>
+<script src="js/common.js"></script>
+<script>renderChrome("index.html");
+const feat=document.getElementById("latest");
+feat.innerHTML=JOBS.slice(0,3).map(j=>`<article class="card"><span class="tag type">${esc(j.type)}</span><h3>${esc(j.title)}</h3><p class="company">${esc(j.company)} · ${esc(j.location)}</p><p class="meta">${esc(j.salary)}</p><a class="btn btn-outline btn-sm" href="job.html?id=${j.id}">View details</a></article>`).join("");
+document.getElementById("statJobs").textContent=JOBS.length;</script>
+</body>
+</html>

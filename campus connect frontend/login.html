@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="CampusConnect – one portal for campus placements and internships.">
+<title>Login | CampusConnect</title>
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<div id="header"></div>
+<main id="main" class="container">
+<section class="card form-card" aria-labelledby="formTitle">
+ <h1 id="formTitle" style="margin-top:0">Welcome back</h1>
+ <div class="tabs" role="tablist" aria-label="Login or register">
+  <button class="tab" role="tab" id="tabLogin" aria-selected="true" type="button">Login</button>
+  <button class="tab" role="tab" id="tabReg" aria-selected="false" type="button">Register</button></div>
+ <form id="authForm" novalidate>
+  <div id="nameWrap" hidden><label for="name">Full name</label><input id="name" type="text" autocomplete="name"><p class="error" id="errName" role="alert"></p></div>
+  <label for="email">Email address</label><input id="email" type="email" autocomplete="email" placeholder="you@example.com"><p class="error" id="errEmail" role="alert"></p>
+  <label for="password">Password (min 6 characters)</label><input id="password" type="password" autocomplete="current-password"><p class="error" id="errPass" role="alert"></p>
+  <label for="role">I am a</label><select id="role"><option value="Student">Student</option><option value="Recruiter">Recruiter</option></select>
+  <p style="margin-top:1.2rem"><button class="btn" type="submit" id="submitBtn" style="width:100%">Login</button></p>
+ </form>
+ <p class="meta">Demo mode: any valid email and password works. Real authentication (JWT) is added in Week 3.</p>
+</section></main>
+<div id="footer"></div>
+<script src="js/data.js"></script>
+<script src="js/common.js"></script>
+<script src="js/login.js"></script>
+</body>
+</html>
